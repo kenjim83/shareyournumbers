@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "Share Your Numbers: Bring transparency to the independent film industry" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <nav class="top-bar">
+      <ul class="title-area">
+        <li class="name">
+          <h1><%= link_to "Share Your Numbers", root_path %></a></h1>
+        </li>
+      </ul>
+
+      <section class="top-bar-section">
+        <ul class="right">
+          <li class="divider"></li>
+          <%= render 'devise/menu/registration_items' %>
+          <li class="divider"></li>
+          <li><%= link_to "Price List" %></li>
+          <li class="divider"></li>
+          <li><%= link_to "About", '/about' %></li>
+          <li class="divider"></li>
+          <%= render 'devise/menu/login_items' %>
+        </ul>
+      </section>
+    </nav>
+
+    <div class="row">
+      <div class="medium-12 columns"><%= yield %></div>
+<!--       <div class="medium-4 columns">
+        <h2>About Us</h2>
+        <p>Forage cardigan slow-carb, Marfa umami Intelligentsia try-hard whatever readymade. DIY Vice freegan mixtape, gentrify sartorial keffiyeh Portland. Carles vinyl messenger bag Williamsburg viral. Messenger bag sartorial put a bird on it cray pour-over, Wes Anderson fanny pack Tumblr sriracha craft beer. Mustache blog next level, swag mixtape vegan Intelligentsia YOLO roof party quinoa hoodie ethical. Ennui hella gastropub, biodiesel hoodie cornhole gentrify synth. Try-hard retro flannel cornhole trust fund single-origin coffee, crucifix cliche readymade jean shorts chambray artisan.</p>
+      </div> -->
+    </div>
+
+
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>

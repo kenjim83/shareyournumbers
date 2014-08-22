@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @revenue_post.user %>
+</p>
+
+<p>
+  <strong>Movie:</strong>
+  <%= @revenue_post.movie %>
+</p>
+
+<p>
+  <strong>Distributor:</strong>
+  <%= @revenue_post.distributor %>
+</p>
+
+<p>
+  <strong>Revenue:</strong>
+  <%= @revenue_post.revenue %>
+</p>
+
+<p>
+  <strong>Published:</strong>
+  <%= @revenue_post.published %>
+</p>
+
+<p>
+  <strong>Source url:</strong>
+  <%= @revenue_post.source_url %>
+</p>
+
+<%= link_to 'Edit', edit_revenue_post_path(@revenue_post) %> |
+<%= link_to 'Back', revenue_posts_path %>

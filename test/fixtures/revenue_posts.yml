@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  movie_id: 
+  distributor_id: 
+  revenue: 1
+  published: false
+  source_url: MyString
+
+two:
+  user_id: 
+  movie_id: 
+  distributor_id: 
+  revenue: 1
+  published: false
+  source_url: MyString

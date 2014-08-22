@@ -1,0 +1,41 @@
+<%= form_for(@revenue_post) do |f| %>
+  <% if @revenue_post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@revenue_post.errors.count, "error") %> prohibited this revenue_post from being saved:</h2>
+
+      <ul>
+      <% @revenue_post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="field">
+    <%= f.label :movie_id %><br>
+    <%= f.text_field :movie_id %>
+  </div>
+  <div class="field">
+    <%= f.label :distributor_id %><br>
+    <%= f.text_field :distributor_id %>
+  </div>
+  <div class="field">
+    <%= f.label :revenue, class: "inline", title: "Revenue in USD", data: { tooltip: true } %><br>
+    <%= f.number_field :revenue %>
+  </div>
+  <div class="field">
+    <%= f.label :published %><br>
+    <%= f.check_box :published %>
+  </div>
+  <div class="field">
+    <%= f.label :source_url %><br>
+    <%= f.text_field :source_url %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Submit", class: "button radius" %>
+  </div>
+<% end %>
