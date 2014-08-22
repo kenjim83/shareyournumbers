@@ -3,3 +3,5 @@ class RevenuePost < ActiveRecord::Base
   belongs_to :movie
   belongs_to :distributor
 end
+
+

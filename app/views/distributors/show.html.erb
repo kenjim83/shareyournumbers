@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @distributor.name %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @distributor.website %>
+</p>
+
+<p>
+  <strong>Logo url:</strong>
+  <%= @distributor.logo_url %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @distributor.address %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @distributor.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @distributor.state %>
+</p>
+
+<p>
+  <strong>Zip:</strong>
+  <%= @distributor.zip %>
+</p>
+
+<%= link_to 'Edit', edit_distributor_path(@distributor) %> |
+<%= link_to 'Back', distributors_path %>

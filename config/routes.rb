@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :genres
+
+  resources :distributors
+
+  resources :movies
+
   devise_for :users
   root to: "static_pages#home"
   get 'about' => "static_pages#about"

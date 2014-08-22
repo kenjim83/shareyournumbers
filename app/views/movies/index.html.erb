@@ -1,0 +1,32 @@
+<h1>Movies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Year</th>
+      <th>Genre(s)</th>
+      <th>Poster</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @movies.each do |movie| %>
+      <tr>
+        <td><%= movie.title %></td>
+        <td><%= movie.year %></td>
+        <td>
+          <% movie.genres.map do |genre| %>
+            <%= link_to genre.name, genre_path(genre) %>
+          <% end %>
+        </td>
+        <td><%= image_tag movie.poster_url.to_s %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Movie', new_movie_path %>
