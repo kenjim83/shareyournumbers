@@ -1,6 +1,5 @@
-ActiveAdmin.register Genre do
-  remove_filter :movies
-  remove_filter :genres_movies
+ActiveAdmin.register Distributor do
+
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters

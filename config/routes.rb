@@ -1,13 +1,16 @@
 Rails.application.routes.draw do
+  devise_for :users
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :genres
-
+  resources :users, except: [:edit]
   resources :distributors
+
+  get '/movie_autofill' => 'movies#autocomplete'
 
   resources :movies
 
-  devise_for :users
   root to: "static_pages#home"
   get 'about' => "static_pages#about"
 

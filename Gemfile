@@ -11,7 +11,7 @@ gem 'carrierwave'
 gem 'mini_magick'
 
 # Active Admin
-gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'activeadmin', github: 'activeadmin'
 
 gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier', '>= 1.3.0'

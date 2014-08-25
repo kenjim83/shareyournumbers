@@ -1,13 +1,11 @@
-<h1>All Revenue Posts</h1>
+<h1>VOD Numbers</h1>
 
 <table>
   <thead>
     <tr>
-      <th>User</th>
+      <th>Posted by</th>
       <th>Movie</th>
-      <th>Distributor</th>
-      <th>Revenue</th>
-      <th>Published</th>
+      <th>VOD Revenue</th>
       <th>Source url</th>
       <th colspan="3"></th>
     </tr>
@@ -16,12 +14,10 @@
   <tbody>
     <% @revenue_posts.each do |revenue_post| %>
       <tr>
-        <td><%= revenue_post.user %></td>
-        <td><%= revenue_post.movie %></td>
-        <td><%= revenue_post.distributor %></td>
-        <td><%= revenue_post.revenue %></td>
-        <td><%= revenue_post.published %></td>
-        <td><%= revenue_post.source_url %></td>
+        <td><%= link_to revenue_post.user.first_name, user_path(revenue_post.user) %></td>
+        <td><%= link_to revenue_post.movie_title, movie_path(revenue_post.movie) %></td>
+        <td><%= number_to_currency(revenue_post.revenue, precision: 0) %></td>
+        <td><%= link_to "Source", revenue_post.source_url %></td>
         <td><%= link_to 'Show', revenue_post %></td>
         <td><%= link_to 'Edit', edit_revenue_post_path(revenue_post) %></td>
         <td><%= link_to 'Destroy', revenue_post, method: :delete, data: { confirm: 'Are you sure?' } %></td>

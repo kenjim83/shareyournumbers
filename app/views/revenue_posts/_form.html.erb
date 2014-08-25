@@ -12,12 +12,8 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.text_field :user_id %>
-  </div>
-  <div class="field">
-    <%= f.label :movie_id %><br>
-    <%= f.text_field :movie_id %>
+    <%= f.label :movie_title, "Movie Title" %><br>
+    <%= f.text_field :movie_title, data: {autocomplete_source: '/movie_autofill' } %>
   </div>
   <div class="field">
     <%= f.label :distributor_id %><br>

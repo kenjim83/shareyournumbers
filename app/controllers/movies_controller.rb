@@ -7,6 +7,11 @@ class MoviesController < ApplicationController
     @movies = Movie.all
   end
 
+  def autocomplete
+    @movies = Movie.order(:title).where("title like ?", "%#{params[:term]}%")
+    render json: @movies.map(&:title)
+  end
+
   # GET /movies/1
   # GET /movies/1.json
   def show

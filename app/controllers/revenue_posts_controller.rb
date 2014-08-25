@@ -1,5 +1,6 @@
 class RevenuePostsController < ApplicationController
   before_action :set_revenue_post, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:show, :index]
 
   # GET /revenue_posts
   # GET /revenue_posts.json
@@ -14,6 +15,7 @@ class RevenuePostsController < ApplicationController
 
   # GET /revenue_posts/new
   def new
+    @movies_for_autocomplete = Movie.format_for_autocomplete
     @revenue_post = RevenuePost.new
   end
 
@@ -24,8 +26,7 @@ class RevenuePostsController < ApplicationController
   # POST /revenue_posts
   # POST /revenue_posts.json
   def create
-    @revenue_post = RevenuePost.new(revenue_post_params)
-
+    @revenue_post = RevenuePost.new(revenue_post_params.merge(user_id: current_user.id))
     respond_to do |format|
       if @revenue_post.save
         format.html { redirect_to @revenue_post, notice: 'Revenue post was successfully created.' }
@@ -69,6 +70,6 @@ class RevenuePostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def revenue_post_params
-      params.require(:revenue_post).permit(:user_id, :movie_id, :distributor_id, :revenue, :published, :source_url)
+      params.require(:revenue_post).permit(:user_id, :movie_title, :movie_id, :distributor_id, :revenue, :published, :source_url)
     end
 end
