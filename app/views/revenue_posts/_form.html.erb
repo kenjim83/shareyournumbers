@@ -1,37 +1,36 @@
-<%= form_for(@revenue_post) do |f| %>
-  <% if @revenue_post.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@revenue_post.errors.count, "error") %> prohibited this revenue_post from being saved:</h2>
 
-      <ul>
-      <% @revenue_post.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+
+  <%= form_for(@revenue_post) do |f| %>
+    <% if @revenue_post.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@revenue_post.errors.count, "error") %> prohibited this revenue_post from being saved:</h2>
+
+        <ul>
+        <% @revenue_post.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :movie_title, "Movie Title" %><br>
+      <%= f.text_field :movie_title, data: {autocomplete_source: '/movie_autofill' }, placeholder: 'Margin Call' %>
+    </div>
+    <div class="field">
+      <%= f.label :distributor_id %><br>
+      <%= f.text_field :distributor_id, placeholder: 'Roadside Attractions' %>
+    </div>
+    <div class="field">
+      <%= f.label :revenue, "VOD Revenue" %><br>
+      <%= f.text_field :revenue, data: {autonumeric: {aSign: '$ ', mDec: 0}}, placeholder: '$ 5,000,000' %>
+    </div>
+    <div class="field">
+      <%= f.label :source_url, 'Source Link - Simply copy and paste the URL where the data was published' %><br>
+      <%= f.text_field :source_url, placeholder: 'http://variety.com/2011/film/news/margin-call-changes-vod-picture-1118047677/' %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Submit for Review", class: "button radius" %>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :movie_title, "Movie Title" %><br>
-    <%= f.text_field :movie_title, data: {autocomplete_source: '/movie_autofill' } %>
-  </div>
-  <div class="field">
-    <%= f.label :distributor_id %><br>
-    <%= f.text_field :distributor_id %>
-  </div>
-  <div class="field">
-    <%= f.label :revenue, class: "inline", title: "Revenue in USD", data: { tooltip: true } %><br>
-    <%= f.number_field :revenue %>
-  </div>
-  <div class="field">
-    <%= f.label :published %><br>
-    <%= f.check_box :published %>
-  </div>
-  <div class="field">
-    <%= f.label :source_url %><br>
-    <%= f.text_field :source_url %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Submit", class: "button radius" %>
-  </div>
-<% end %>

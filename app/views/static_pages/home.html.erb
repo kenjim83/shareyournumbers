@@ -1,7 +1,45 @@
-<h1>Welcome to Share Your Numbers!</h1>
+<% flash.each do |name, msg| %>
+  <% if msg.is_a?(String) %>
+    <div data-alert class="alert-box round <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+      <%= content_tag :div, msg %>
+      <a href="#" class="close">&times;</a>
+    </div>
+  <% end %>
+<% end %>
 
-<p>A free site for indie filmmakers to share VOD revenue data with each other.</p>
-<p>Share VOD revenue data with other filmmakers to help the community</p>
+<div id="intro">
+  <div class="row">
+    <div class="medium-12 columns">
+      <h1>Welcome to Share Your Numbers!</h1>
+      <p>A free site for indie filmmakers to share VOD revenue data with each other.</p>
+      <p>Share VOD revenue data with other filmmakers to help the community</p>
+    </div>
+  </div>
 
+</div>
+
+
+<div id="about">
+  <div class="row">
+    <div class="medium-12 columns">
+      <h1>About</h1>
+      <p>A free site for indie filmmakers to share VOD revenue data with each other.</p>
+      <p>Share VOD revenue data with other filmmakers to help the community</p>
+
+    </div>
+  </div>
+</div>
+
+<div id="how-it-works">
+  <div class="row">
+    <div class="medium-12 columns">
+    <h1>How it works</h1>
+    <p>
+      Crucifix chillwave mustache, keffiyeh semiotics dreamcatcher sriracha. Fanny pack Portland next level food truck, asymmetrical Brooklyn Banksy church-key High Life blog McSweeney's ethnic. Etsy selfies street art PBR&B keytar Tonx, small batch gentrify literally seitan VHS tousled organic. Messenger bag skateboard before they sold out mumblecore. Fixie Helvetica synth, typewriter quinoa XOXO squid master cleanse Odd Future. Gentrify Etsy gluten-free Tonx fashion axe. Vinyl fap narwhal, irony craft beer seitan ethical farm-to-table butcher.
+    </p>
+    </div>
+  </div>
+
+</div>
 
 

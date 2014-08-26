@@ -15,6 +15,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require foundation
+//= require autonumeric
 //= require_tree .
 
 
+$(document).foundation();

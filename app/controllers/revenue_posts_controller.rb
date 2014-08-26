@@ -5,7 +5,8 @@ class RevenuePostsController < ApplicationController
   # GET /revenue_posts
   # GET /revenue_posts.json
   def index
-    @revenue_posts = RevenuePost.all
+    @search = RevenuePost.search(params[:q])
+    @revenue_posts = @search.result
   end
 
   # GET /revenue_posts/1
@@ -29,7 +30,7 @@ class RevenuePostsController < ApplicationController
     @revenue_post = RevenuePost.new(revenue_post_params.merge(user_id: current_user.id))
     respond_to do |format|
       if @revenue_post.save
-        format.html { redirect_to @revenue_post, notice: 'Revenue post was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Revenue post was successfully created.' }
         format.json { render :show, status: :created, location: @revenue_post }
       else
         format.html { render :new }

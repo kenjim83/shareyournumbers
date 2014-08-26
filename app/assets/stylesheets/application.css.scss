@@ -15,3 +15,73 @@
  *= require foundation_and_overrides
 
  */
+
+@import 'foundation';
+
+
+#intro {
+  background: url('bg-overlay-pattern.png') repeat;
+  font-size: 1.5em;
+  padding-top: 10%;
+  text-align: center;
+  height: 500px;
+  display: block;
+    position: relative;
+}
+#intro h1,
+#intro p {
+  text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+}
+#intro h1 {
+  font-size: 2em;
+}
+
+#intro:after {
+    content: "";
+    background: url('bg-lg-filmmaker.jpg');
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+}
+
+#about,
+#how-it-works {
+  height: 500px;
+  padding: 20px;
+}
+
+#about {
+  background: #382035;
+}
+
+#how-it-works {
+  background: #243835;
+}
+
+.homepage {
+   width: 100%;
+   color: white;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+.homepage h1 {
+  color: white;
+}
+
+
+
+// .bg-img {
+//   width: 100%;
+//    // small background-image or nothing to be loaded by default
+//    background-image: url('bg-sm-filmmaker.jpg');
+//    @media #{$large-up} {
+//       // load background image for large
+//       background-image: url('bg-lg-filmmaker.jpg');
+//    }
+// }
+
+

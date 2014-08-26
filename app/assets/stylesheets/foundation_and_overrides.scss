@@ -1268,7 +1268,7 @@ $column-gutter: rem-calc(60);
 // 30. Tables
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $include-html-table-classes: $include-html-classes;
+$include-html-table-classes: $include-html-classes;
 
 // These control the background color for the table and even rows
 // $table-bg: $white;
@@ -1365,7 +1365,7 @@ $column-gutter: rem-calc(60);
 
 // Background color for the top bar
 
-$topbar-bg-color: #3f294d !default;
+$topbar-bg-color: #211a22 !default;
 
 // $topbar-bg: $topbar-bg-color;
 

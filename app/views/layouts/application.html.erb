@@ -21,8 +21,11 @@
 
       <section class="top-bar-section">
         <ul class="right">
+          <li class="has-form">
+            <%= link_to "Share!", new_revenue_post_path, :class => "button"%>
+          </li>
           <li class="divider"></li>
-          <li><%= link_to "VOD Numbers", revenue_posts_path %></li>
+          <li><%= link_to "VOD Numbers", '/vod' %></li>
           <li class="divider"></li>
           <%= render 'devise/menu/registration_items' %>
           <li class="divider"></li>
@@ -35,13 +38,14 @@
       </section>
     </nav>
 
-    <div class="row">
-      <div class="medium-12 columns"><%= yield %></div>
-<!--       <div class="medium-4 columns">
-        <h2>About Us</h2>
-        <p>Forage cardigan slow-carb, Marfa umami Intelligentsia try-hard whatever readymade. DIY Vice freegan mixtape, gentrify sartorial keffiyeh Portland. Carles vinyl messenger bag Williamsburg viral. Messenger bag sartorial put a bird on it cray pour-over, Wes Anderson fanny pack Tumblr sriracha craft beer. Mustache blog next level, swag mixtape vegan Intelligentsia YOLO roof party quinoa hoodie ethical. Ennui hella gastropub, biodiesel hoodie cornhole gentrify synth. Try-hard retro flannel cornhole trust fund single-origin coffee, crucifix cliche readymade jean shorts chambray artisan.</p>
-      </div> -->
-    </div>
+    <% if @homepage %>
+      <div class="homepage"><%= yield %></div>
+    <% else %>
+      <div class="row">
+        <div class="medium-12 columns"><%= yield %></div>
+      </div>
+    <% end %>
+
 
 
     <%= javascript_include_tag "application" %>
