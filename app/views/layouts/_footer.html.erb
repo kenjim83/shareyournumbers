@@ -1,0 +1,27 @@
+<footer>
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <ul class="footer-links">
+        <li><%= link_to "About", "/#about" %></li>
+        <li><%= link_to "How it Works", "/#how-it-works" %></li>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      </ul>
+    </div>
+
+    <div class="small-12 medium-6 columns">
+      <div class="social">
+        <ul>
+          <li><a href="https://twitter.com/"><%= image_tag "icons/twitter.png" %></a></li>
+          <li><a href="https://facebook.com/"><%= image_tag "icons/facebook.png" %></a></li>
+          <li><a href="mailto:shareyournumbers.gmail.com?Subject=Howdy" target="_blank" class="email"><%= image_tag "icons/email.png" %></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="small-12 medium-12 columns">
+      <p>© <%= Time.now.year %> Showyournumbers.com. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

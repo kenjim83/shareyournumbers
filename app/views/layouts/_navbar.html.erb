@@ -1,0 +1,17 @@
+<nav class="top-bar">
+  <ul class="title-area">
+    <li class="name">
+      <h1><%= link_to "Share Your Numbers", root_path, :class => 'logo' %></a></h1>
+    </li>
+  </ul>
+  <section class="top-bar-section">
+    <ul class="right">
+      <li class="has-form">
+        <%= link_to "Submit VOD Rev Post", new_revenue_post_path, :id => "custom-top-button" %>
+      </li>
+      <li><%= link_to "VOD Numbers", '/vod' %></li>
+      <%= render 'devise/menu/registration_items' %>
+      <%= render 'devise/menu/login_items' %>
+    </ul>
+  </section>
+</nav>

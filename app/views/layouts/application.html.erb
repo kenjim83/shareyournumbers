@@ -1,53 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "Share Your Numbers: Bring transparency to the independent film industry" %></title>
+  <title><%= content_for?(:title) ? yield(:title) : "Share Your Numbers: Bring transparency to the independent film industry" %></title>
+  <link href='http://fonts.googleapis.com/css?family=Alfa+Slab+One' rel='stylesheet' type='text/css'>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= csrf_meta_tags %>
+</head>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= csrf_meta_tags %>
-  </head>
+<body>
 
-  <body>
-    <nav class="top-bar">
-      <ul class="title-area">
-        <li class="name">
-          <h1><%= link_to "Share Your Numbers", root_path %></a></h1>
-        </li>
-      </ul>
+  <%= render 'layouts/navbar' %>
 
-      <section class="top-bar-section">
-        <ul class="right">
-          <li class="has-form">
-            <%= link_to "Share!", new_revenue_post_path, :class => "button"%>
-          </li>
-          <li class="divider"></li>
-          <li><%= link_to "VOD Numbers", '/vod' %></li>
-          <li class="divider"></li>
-          <%= render 'devise/menu/registration_items' %>
-          <li class="divider"></li>
-          <li><%= link_to "Movies", movies_path %></li>
-          <li class="divider"></li>
-          <li><%= link_to "About", '/about' %></li>
-          <li class="divider"></li>
-          <%= render 'devise/menu/login_items' %>
-        </ul>
-      </section>
-    </nav>
-
-    <% if @homepage %>
-      <div class="homepage"><%= yield %></div>
-    <% else %>
-      <div class="row">
-        <div class="medium-12 columns"><%= yield %></div>
+  <% flash.each do |name, msg| %>
+    <% if msg.is_a?(String) %>
+      <div data-alert class="alert-box <%= name.to_s == 'notice' ? 'success' : 'alert' %>">
+        <%= content_tag :div, msg %>
+        <a href="#" class="close">&times;</a>
       </div>
     <% end %>
+  <% end %>
+
+  <% if @homepage %>
+    <div class="homepage"><%= yield %></div>
+  <% else %>
+    <div class="wrapper row clearfix">
+      <%= yield %>
+    </div>
+  <% end %>
 
 
+  <%= render 'layouts/footer' %>
 
-    <%= javascript_include_tag "application" %>
-  </body>
+  <%= javascript_include_tag "application" %>
+</body>
 </html>

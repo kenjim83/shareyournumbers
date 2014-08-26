@@ -30,7 +30,7 @@ class RevenuePostsController < ApplicationController
     @revenue_post = RevenuePost.new(revenue_post_params.merge(user_id: current_user.id))
     respond_to do |format|
       if @revenue_post.save
-        format.html { redirect_to root_path, notice: 'Revenue post was successfully created.' }
+        format.html { redirect_to revenue_posts_path, notice: 'Revenue post was successfully submitted!' }
         format.json { render :show, status: :created, location: @revenue_post }
       else
         format.html { render :new }

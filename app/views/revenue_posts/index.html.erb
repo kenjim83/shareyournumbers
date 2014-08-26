@@ -1,12 +1,14 @@
 <h1>VOD Numbers</h1>
 
-<%= search_form_for @search do |f| %>
-  <div class="field">
-    <%= f.label :movie_title_cont, "Movie title contains" %>
-    <%= f.search_field :movie_title_cont %>
-  </div>
-  <div class="actions"><%= f.submit "Search" %></div>
-<% end %>
+<div class="panel">
+  <%= search_form_for @search do |f| %>
+    <div class="field">
+      <%= f.label :movie_title_cont, "Movie title contains" %>
+      <%= f.search_field :movie_title_cont %>
+    </div>
+    <div class="actions"><%= f.submit "Search", :class => 'button radius' %></div>
+  <% end %>
+</div>
 
 <table>
   <thead>
