@@ -28,12 +28,9 @@
         <td><%= revenue_post.movie.year if revenue_post.movie %></td>
         <td class="right"><%= number_to_currency(revenue_post.revenue, precision: 0) %></td>
         <td><%= link_to "Source", revenue_post.source_url %></td>
-        <td><%= link_to revenue_post.user.first_name, user_path(revenue_post.user) %></td>
+        <td><%= link_to revenue_post.user.first_name, user_path(revenue_post.user) %><h5><small><%= time_ago_in_words revenue_post.created_at %> ago</small></h5></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Create New Revenue Post', new_revenue_post_path, class: "button radius" %>

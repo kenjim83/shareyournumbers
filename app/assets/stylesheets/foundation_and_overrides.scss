@@ -1465,13 +1465,15 @@ $topbar-button-font-size: 1.25rem;
 
 
 .wrapper {
+  padding-left: 10px;
+  padding-right: 10px;
   padding-top: 20px;
   padding-bottom: 40px;
 }
 
 .logo {
-  font-size: 1.5em;
-  font-family: 'Alfa Slab One', cursive;
+  font-size: 2em;
+  font-family: 'Lobster', cursive sans-serif;
 }
 
 #custom-top-button {
@@ -1507,37 +1509,78 @@ $topbar-button-font-size: 1.25rem;
   font-size: rem-calc(60);
 }
 #intro h1,
-#intro p {
+#intro h3 {
   color: $snow;
-  text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
+  // text-shadow: 0px 0px 15px rgba(0, 0, 0, 1);
 }
 
-#about,
-#how-it-works {
+#magnifying {
+  position: relative;
+  opacity: .25;
+  background: url('icons/magnifying.svg');
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+}
+#track-data {
+  position: relative;
+  opacity: .25;
+  background: url('icons/increasing.svg');
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+}
+#helping-hands {
+  position: relative;
+  opacity: .25;
+  background: url('icons/hands-shake.svg');
+  background-size: cover;
+  width: 400px;
+  height: 400px;
+}
+
+#magnifying svg {
+  fill: $snow;
+}
+#home-signup {
+  margin-top: 20px;
+}
+
+#intro-1,
+#intro-2,
+#intro-3 {
   height: 500px;
+  overflow: hidden;
   padding: 60px 0;
 }
-#about h1{
+
+#intro-1 h1{
   color: $snow;
 }
 
-#about {
+#intro-1 {
   background: $primary-color;
 }
 
-#how-it-works {
-  color: $oil;
+#intro-2 {
   background: $snow;
 }
 
-
-.homepage {
-   width: 100%;
-   color: white;
-   margin-left: auto;
-   margin-right: auto;
-   max-width: initial;
+#intro-2 h1,
+#intro-2 p {
+  color: $primary-color;
 }
+
+
+#intro-3 {
+  color: $oil;
+  background: $iron;
+}
+
+#intro-3 h1 {
+  color: $snow;
+}
+
 
 
 // Custom Footer

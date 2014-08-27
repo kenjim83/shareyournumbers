@@ -14,11 +14,11 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :movie_title, "Movie Title" %><br>
+      <%= f.label :movie_title, "Movie Title", :class => 'inline' %>
       <%= f.text_field :movie_title, data: {autocomplete_source: '/movie_autofill' }, placeholder: 'Margin Call' %>
     </div>
     <div class="field">
-      <%= f.label :distributor_id %><br>
+      <%= f.label :distributor_id, "Distributor", :class => 'inline' %>
       <%= f.text_field :distributor_id, placeholder: 'Roadside Attractions' %>
     </div>
     <div class="field">
@@ -26,11 +26,11 @@
       <%= f.text_field :revenue, data: {autonumeric: {aSign: '$ ', mDec: 0}}, placeholder: '$ 5,000,000' %>
     </div>
     <div class="field">
-      <%= f.label :source_url, 'Source Link - Simply copy and paste the URL where the data was published' %><br>
+      <%= f.label :source_url, 'Source Link - Simply paste in the URL where the data was published' %><br>
       <%= f.text_field :source_url, placeholder: 'http://variety.com/2011/film/news/margin-call-changes-vod-picture-1118047677/' %>
     </div>
     <div class="actions">
-      <%= f.submit "Submit for Review", class: "button radius" %>
+      <div class="text-center"><%= f.submit "Submit for Review", :class => 'button radius small-12 medium-6 large-3' %></div>
     </div>
   <% end %>
 
